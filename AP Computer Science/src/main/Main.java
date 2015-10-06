@@ -3,6 +3,7 @@ import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.concurrent.Worker.State;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckMenuItem;
@@ -17,8 +18,8 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 
@@ -30,16 +31,18 @@ public class Main extends Application {
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		primaryStage.setTitle("AP Computer Science");		
-		BorderPane layout = new BorderPane();
+		Pane pane = (Pane)FXMLLoader.load(getClass().getResource("View.fxml"));
+        Scene scene = new Scene(pane, 1280, 800);
+		primaryStage.setTitle("AP Computer Science");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+		
+		/*BorderPane layout = new BorderPane();
 		layout.setLeft(buildTree());
 		layout.setTop(buildMenu());
 		layout.setCenter(buildTextArea());
 		layout.setBottom(buildUtilBox());
-		Scene scene = new Scene(layout, 1280, 900);
-		
-		primaryStage.setScene(scene);
-		primaryStage.show();
+		*/
 	}
 	
 	private GridPane buildUtilBox() {
