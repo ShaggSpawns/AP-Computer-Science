@@ -13,6 +13,7 @@ public class Main extends Application {
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
+		//Pane pane = (Pane)FXMLLoader.load(getClass().getResource("fxml_example.fxml"));
 		Pane pane = (Pane)FXMLLoader.load(getClass().getResource("View.fxml"));
         Scene scene = new Scene(pane, 1280, 800);
 		primaryStage.setTitle("AP Computer Science");
