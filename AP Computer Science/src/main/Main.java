@@ -36,7 +36,6 @@ public class Main extends Application {
 		primaryStage.setTitle("AP Computer Science");
         primaryStage.setScene(scene);
         primaryStage.show();
-		
 		/*BorderPane layout = new BorderPane();
 		layout.setLeft(buildTree());
 		layout.setTop(buildMenu());
